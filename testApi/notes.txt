@@ -1,0 +1,10 @@
+$cert = New-SelfSignedCertificate -certstorelocation cert:\\localmachine\my -dns c5.io
+
+$pwd = ConvertTo-SecureString -String "pa$$word!" -Force -AsPlainText
+
+$certpath = "Cert:\localmachine\my\$($cert.Thumbprint)"
+
+Export-PfxCertificate -Cert $certpath -FilePath d:\myCert.pfx -Password $pwd
+
+
+https://www.youtube.com/watch?v=96KHOaIe19w&t=2977s
